@@ -1,0 +1,7 @@
+PALASH BARMAN
+Flutter Developer
+
+Mobile experiences built with care.
+
+Skills: Flutter, Dart, Firebase, REST APIs, Responsive UI
+Contact: hello@example.com
