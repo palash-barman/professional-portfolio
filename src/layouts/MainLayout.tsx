@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { useEffect, type PropsWithChildren } from 'react'
+import { useEffect, useRef, useState, type PropsWithChildren } from 'react'
 import { useLocation } from 'react-router-dom'
 import { Atmosphere } from '../components/Atmosphere'
 import { Footer } from '../components/Footer'
@@ -8,6 +8,18 @@ import { Navbar } from '../components/Navbar'
 export function MainLayout({ children }: PropsWithChildren) {
   const { pathname, hash } = useLocation()
   const reduce = useReducedMotion()
+  const previousPathname = useRef(pathname)
+  const [routeLoading, setRouteLoading] = useState(false)
+
+  useEffect(() => {
+    if (previousPathname.current === pathname) return
+
+    previousPathname.current = pathname
+    setRouteLoading(true)
+    const timer = window.setTimeout(() => setRouteLoading(false), 900)
+
+    return () => window.clearTimeout(timer)
+  }, [pathname])
 
   useEffect(() => {
     const previousRestoration = window.history.scrollRestoration
@@ -45,6 +57,15 @@ export function MainLayout({ children }: PropsWithChildren) {
 
   return (
     <>
+      <div
+        className="route-loader"
+        data-active={routeLoading}
+        role="status"
+        aria-live="polite"
+        aria-label={routeLoading ? 'Loading page' : undefined}
+      >
+        {routeLoading ? <span /> : null}
+      </div>
       <Atmosphere />
       <a className="skip-link" href="#content">Skip to content</a>
       <Navbar />

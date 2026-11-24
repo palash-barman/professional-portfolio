@@ -10,10 +10,21 @@ const NotFound = lazy(() => import('./pages/NotFound').then((module) => ({ defau
 const ProjectDetails = lazy(() => import('./pages/ProjectDetails').then((module) => ({ default: module.ProjectDetails })))
 const Projects = lazy(() => import('./pages/Projects').then((module) => ({ default: module.Projects })))
 
+function RouteLoadingFallback() {
+  return (
+    <div className="route-fallback" role="status" aria-label="Loading page">
+      <div className="route-fallback-bar" />
+      <div className="route-fallback-heading" />
+      <div className="route-fallback-copy" />
+      <div className="route-fallback-copy short" />
+    </div>
+  )
+}
+
 function App() {
   return (
     <MainLayout>
-      <Suspense fallback={null}>
+      <Suspense fallback={<RouteLoadingFallback />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
