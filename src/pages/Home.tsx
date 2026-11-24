@@ -69,6 +69,8 @@ export function Home() {
               alt="Palash Chandra Barman"
               width={900}
               height={1100}
+              fetchPriority="high"
+              decoding="async"
               initial={reduce ? false : { scale: 1.14 }}
               animate={{ scale: 1 }}
               transition={{ duration: 1.3, ease }}

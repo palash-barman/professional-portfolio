@@ -44,7 +44,7 @@ body {
     radial-gradient(820px 420px at 100% -10%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%),
     var(--bg);
   color: var(--text);
-  font-family: Outfit, ui-sans-serif, system-ui, sans-serif;
+  font-family: 'Outfit Variable', Outfit, ui-sans-serif, system-ui, sans-serif;
   font-weight: 360;
   letter-spacing: -0.011em;
   text-rendering: optimizeLegibility;
@@ -68,7 +68,7 @@ button { cursor: pointer; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
 .shell { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
-.display, h1, h2, h3, .serif { font-family: Fraunces, Georgia, serif; font-weight: 560; letter-spacing: -0.045em; }
+.display, h1, h2, h3, .serif { font-family: 'Fraunces Variable', Fraunces, Georgia, serif; font-weight: 560; letter-spacing: -0.045em; }
 
 .site-header {
   position: sticky;
@@ -94,7 +94,7 @@ button { cursor: pointer; }
   border-radius: 9px;
   background: var(--accent);
   color: white;
-  font-family: Fraunces, serif;
+  font-family: 'Fraunces Variable', Fraunces, serif;
   font-style: italic;
   font-size: 0.95rem;
 }
@@ -181,7 +181,7 @@ button { cursor: pointer; }
 .hero-visual { min-width: 0; }
 .hero-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
 .hero-facts li { min-width: 0; padding: 12px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); color: var(--text); }
-.hero-facts strong { display: block; font-family: Fraunces, serif; font-size: 1.25rem; font-weight: 560; letter-spacing: -0.03em; }
+.hero-facts strong { display: block; font-family: 'Fraunces Variable', Fraunces, serif; font-size: 1.25rem; font-weight: 560; letter-spacing: -0.03em; }
 .hero-facts span { color: var(--muted); font-size: 0.75rem; }
 .hero h1 em { color: var(--accent); font-style: italic; font-weight: 560; }
 .lede { max-width: 540px; margin: 22px 0 0; color: var(--muted); font-size: 1.05rem; line-height: 1.6; }
@@ -208,7 +208,7 @@ button { cursor: pointer; }
   color: white;
 }
 .dossier-hero p { margin: 0; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; }
-.dossier-hero strong { font-family: Fraunces, serif; font-size: 4.6rem; font-style: italic; font-weight: 560; line-height: 0.8; letter-spacing: -0.06em; }
+.dossier-hero strong { font-family: 'Fraunces Variable', Fraunces, serif; font-size: 4.6rem; font-style: italic; font-weight: 560; line-height: 0.8; letter-spacing: -0.06em; }
 .dossier-body { display: grid; gap: 0; }
 .fact { display: flex; justify-content: space-between; gap: 16px; padding: 14px 18px; border-top: 1px solid var(--line); font-size: 0.92rem; }
 .fact span { color: var(--muted); }
@@ -236,14 +236,14 @@ button { cursor: pointer; }
   background: color-mix(in srgb, var(--card) 88%, transparent);
 }
 .stat { padding: 22px; border-radius: 18px; }
-.stat strong { display: block; font-family: Fraunces, serif; font-size: 2.6rem; font-weight: 560; letter-spacing: -0.05em; line-height: 1; }
+.stat strong { display: block; font-family: 'Fraunces Variable', Fraunces, serif; font-size: 2.6rem; font-weight: 560; letter-spacing: -0.05em; line-height: 1; }
 .stat span, .muted { color: var(--muted); }
-.client-row { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 18px; padding: 0; list-style: none; color: var(--faint); font-family: Fraunces, serif; font-size: 1.35rem; font-style: italic; }
+.client-row { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 18px; padding: 0; list-style: none; color: var(--faint); font-family: 'Fraunces Variable', Fraunces, serif; font-size: 1.35rem; font-style: italic; }
 
 .split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: start; }
 .about-copy { font-size: 1.2rem; line-height: 1.55; }
 .about-copy p { margin: 0 0 16px; color: var(--muted); }
-.about-copy p:first-child { color: var(--text); font-family: Fraunces, serif; font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.15; letter-spacing: -0.04em; }
+.about-copy p:first-child { color: var(--text); font-family: 'Fraunces Variable', Fraunces, serif; font-size: clamp(1.7rem, 3vw, 2.3rem); line-height: 1.15; letter-spacing: -0.04em; }
 .portrait {
   display: grid;
   min-height: 360px;
@@ -255,13 +255,13 @@ button { cursor: pointer; }
     var(--bg-raise);
   border: 1px solid var(--line);
 }
-.portrait b { font-family: Fraunces, serif; font-size: clamp(4rem, 8vw, 6.5rem); font-style: italic; line-height: 0.8; letter-spacing: -0.06em; }
+.portrait b { font-family: 'Fraunces Variable', Fraunces, serif; font-size: clamp(4rem, 8vw, 6.5rem); font-style: italic; line-height: 0.8; letter-spacing: -0.06em; }
 .portrait p { max-width: 220px; margin: 0; color: var(--muted); }
 
 .skill-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .skill-card { min-height: 210px; padding: 18px; border-radius: 20px; }
 .skill-card:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); }
-.skill-index { color: var(--accent); font-family: Fraunces, serif; font-style: italic; }
+.skill-index { color: var(--accent); font-family: 'Fraunces Variable', Fraunces, serif; font-style: italic; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
 .chip { padding: 5px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 0.75rem; }
 
@@ -283,7 +283,7 @@ button { cursor: pointer; }
 .project-card.wide .phone { width: 220px; }
 .phone-screen { display: grid; align-content: start; gap: 8px; min-height: 210px; padding: 16px 14px; border-radius: 20px; background: #f7f4ee; color: #1a120f; }
 .project-card.wide .phone-screen { min-height: 300px; border-radius: 24px; }
-.phone-screen b { font-family: Fraunces, serif; font-size: 1.05rem; line-height: 1.05; letter-spacing: -0.03em; }
+.phone-screen b { font-family: 'Fraunces Variable', Fraunces, serif; font-size: 1.05rem; line-height: 1.05; letter-spacing: -0.03em; }
 .phone-screen span { display: block; height: 7px; border-radius: 99px; background: rgba(26, 18, 15, 0.12); }
 .phone-screen span:nth-of-type(2) { width: 62%; }
 .phone-screen i { display: block; height: 72px; border-radius: 14px; background: rgba(26, 18, 15, 0.08); }
@@ -294,7 +294,7 @@ button { cursor: pointer; }
 .mini-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0 0; }
 .mini-metrics div { padding: 12px; border: 1px solid var(--line); border-radius: 14px; }
 .mini-metrics dt { color: var(--muted); font-size: 0.72rem; }
-.mini-metrics dd { margin: 4px 0 0; font-family: Fraunces, serif; font-size: 1.35rem; letter-spacing: -0.04em; }
+.mini-metrics dd { margin: 4px 0 0; font-family: 'Fraunces Variable', Fraunces, serif; font-size: 1.35rem; letter-spacing: -0.04em; }
 .project-links { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: auto; padding-top: 18px; font-size: 0.88rem; }
 .project-links .btn { min-height: 40px; }
 .project-links a:not(.btn) { text-decoration: underline; text-underline-offset: 3px; }
@@ -308,7 +308,7 @@ button { cursor: pointer; }
 .expert p, .edu-card p, .quote p { margin: 0; color: var(--muted); line-height: 1.55; }
 .edu-grid, .quote-grid { grid-template-columns: repeat(3, 1fr); }
 .quote { background: var(--bg-raise); }
-.quote p { font-family: Fraunces, serif; color: var(--text); font-size: 1.25rem; line-height: 1.3; letter-spacing: -0.03em; }
+.quote p { font-family: 'Fraunces Variable', Fraunces, serif; color: var(--text); font-size: 1.25rem; line-height: 1.3; letter-spacing: -0.03em; }
 .quote footer { margin-top: 18px; color: var(--muted); font-size: 0.86rem; }
 
 .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 22px; }
@@ -425,14 +425,14 @@ textarea { min-height: 140px; resize: vertical; }
 .skill-tile h3 { margin: 0; font-size: 1.35rem; }
 .skill-tile.feature h3 { font-size: 1.8rem; }
 .skill-tile-top p { margin: 2px 0 0; color: var(--muted); font-size: 0.8rem; }
-.skill-mark { margin: 18px 0 0; color: var(--accent); font-family: Fraunces, serif; font-size: clamp(3.4rem, 6vw, 5.4rem); font-style: italic; line-height: 0.85; letter-spacing: -0.05em; }
+.skill-mark { margin: 18px 0 0; color: var(--accent); font-family: 'Fraunces Variable', Fraunces, serif; font-size: clamp(3.4rem, 6vw, 5.4rem); font-style: italic; line-height: 0.85; letter-spacing: -0.05em; }
 .skill-tile ul { display: flex; flex-wrap: wrap; gap: 8px; margin: auto 0 0; padding: 16px 0 0; list-style: none; }
 .skill-tile li { padding: 7px 11px; border: 1px solid var(--line); border-radius: 999px; background: color-mix(in srgb, var(--bg) 75%, transparent); font-size: 0.84rem; }
 .skill-tile:hover { border-color: color-mix(in srgb, var(--accent) 55%, var(--line)); }
 .xp-track { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .xp-step { display: grid; gap: 4px; padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: transparent; text-align: left; }
 .xp-step span, .xp-step em { color: var(--muted); font-size: 0.78rem; font-style: normal; }
-.xp-step strong { font-family: Fraunces, serif; font-size: 1.2rem; font-weight: 560; letter-spacing: -0.03em; }
+.xp-step strong { font-family: 'Fraunces Variable', Fraunces, serif; font-size: 1.2rem; font-weight: 560; letter-spacing: -0.03em; }
 .xp-step.active { border-color: var(--text); background: var(--text); color: var(--bg); }
 .xp-step.active span, .xp-step.active em { color: color-mix(in srgb, var(--bg) 72%, transparent); }
 .xp-panel { margin-top: 14px; padding: 26px; border: 1px solid var(--line); border-radius: 24px; background: color-mix(in srgb, var(--card) 88%, transparent); }
