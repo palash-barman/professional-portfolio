@@ -86,8 +86,8 @@ export function ProjectSlider({ projects }: { projects: Project[] }) {
               </dl>
               <motion.div className="project-links" variants={line}>
                 <Link className="btn btn-primary" to={`/projects/${project.slug}`}>Case study <ArrowUpRight size={14} aria-hidden="true" /></Link>
-                <a href={project.live} target="_blank" rel="noreferrer">Live demo</a>
-                <a href={project.github} target="_blank" rel="noreferrer">GitHub</a>
+                <a href={project.live} target="_blank" rel="noreferrer">{project.live.includes('apps.apple.com') ? 'App Store' : 'Live demo'}</a>
+                {project.github ? <a href={project.github} target="_blank" rel="noreferrer">GitHub</a> : null}
               </motion.div>
             </motion.div>
           </motion.article>

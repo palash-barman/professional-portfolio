@@ -4,4 +4,4 @@ Flutter Developer
 Mobile experiences built with care.
 
 Skills: Flutter, Dart, Firebase, REST APIs, Responsive UI
-Contact: hello@example.com
+Contact: palash900202@gmail.com.com

@@ -13,9 +13,9 @@ export function Projects() {
   return (
     <Container>
       <section className="page-hero">
-        <p className="kicker"><span>Work</span> Sample reel</p>
-        <h1>Dummy products, real layout.</h1>
-        <p className="lede">These six apps are invented so the portfolio has case studies, filters, GitHub links, and live-demo fields. None of them are claimed as shipped client work.</p>
+        <p className="kicker"><span>Work</span> App Store</p>
+        <h1>Selected mobile applications.</h1>
+        <p className="lede">Real iOS apps and their public App Store listings, grouped for quick discovery.</p>
       </section>
       <section className="section">
         <div className="filters" role="toolbar" aria-label="Filter projects">
@@ -27,7 +27,7 @@ export function Projects() {
         </div>
         <div className="project-grid">
           {visible.map((project) => (
-            <ProjectCard key={project.slug} project={project} index={projects.indexOf(project)} wide={project.featured && category === 'All' && project.slug === 'lumen-live'} />
+            <ProjectCard key={project.slug} project={project} index={projects.indexOf(project)} wide={project.featured && category === 'All' && project.slug === 're-social'} />
           ))}
         </div>
       </section>

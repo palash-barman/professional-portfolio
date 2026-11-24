@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="shell footer-bar">
-        <p>© {new Date().getFullYear()} {profile.name}. Sample case studies are layout stand-ins.</p>
+        <p>© {new Date().getFullYear()} {profile.name}. Flutter Developer.</p>
         <SocialLinks />
         <Link to="/contact">Contact</Link>
       </div>

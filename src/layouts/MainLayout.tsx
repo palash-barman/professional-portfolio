@@ -22,15 +22,15 @@ export function MainLayout({ children }: PropsWithChildren) {
       <Atmosphere />
       <a className="skip-link" href="#content">Skip to content</a>
       <Navbar />
-      <AnimatePresence mode="wait">
+      <AnimatePresence initial={false} mode="sync">
         <motion.main
           id="content"
           className="site-main"
           key={pathname}
-          initial={reduce ? false : { opacity: 0, y: 18 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          exit={reduce ? undefined : { opacity: 0, y: -12 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          exit={reduce ? undefined : { opacity: 0 }}
+          transition={{ duration: reduce ? 0 : 0.16, ease: [0.22, 1, 0.36, 1] }}
         >
           {children}
         </motion.main>

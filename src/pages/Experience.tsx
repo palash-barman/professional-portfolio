@@ -9,7 +9,7 @@ export function Experience() {
       <section className="page-hero">
         <p className="kicker"><span>Experience</span> Dhaka</p>
         <h1>From Flutter developer to technical team lead.</h1>
-        <p className="lede">Company names, titles, and dates follow the CV. The sample products live on the work page, separate from this history.</p>
+        <p className="lede">Company names, titles, and dates follow the career history; published projects are listed separately under selected work.</p>
       </section>
       <section className="section">
         <ExperienceTimeline items={experience} />

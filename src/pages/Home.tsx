@@ -2,14 +2,13 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowDownToLine, ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { ContactForm } from '../components/ContactForm'
-import { CountUp } from '../components/CountUp'
 import { ExperienceTimeline } from '../components/ExperienceTimeline'
 import { ProjectSlider } from '../components/ProjectSlider'
 import { SectionTitle } from '../components/SectionTitle'
 import { SkillCard } from '../components/SkillCard'
 import { education } from '../data/education'
 import { experience } from '../data/experience'
-import { clients, profile, stats, testimonials } from '../data/profile'
+import { profile } from '../data/profile'
 import { projects } from '../data/projects'
 import { expertise, skillGroups } from '../data/skills'
 
@@ -58,21 +57,23 @@ export function Home() {
             </motion.div>
           </motion.div>
         </motion.div>
-        <motion.div
-          className="hero-stage"
-          initial={reduce ? false : { opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <motion.img
-            src={profile.photo}
-            alt="Palash Chandra Barman"
-            width={900}
-            height={1100}
-            initial={reduce ? false : { scale: 1.14 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 1.3, ease }}
-          />
+        <div className="hero-visual">
+          <motion.div
+            className="hero-stage"
+            initial={reduce ? false : { opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <motion.img
+              src={profile.photo}
+              alt="Palash Chandra Barman"
+              width={900}
+              height={1100}
+              initial={reduce ? false : { scale: 1.14 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.3, ease }}
+            />
+          </motion.div>
           <ul className="hero-facts">
             {[
               [profile.years, 'Years in Flutter'],
@@ -89,7 +90,7 @@ export function Home() {
               </motion.li>
             ))}
           </ul>
-        </motion.div>
+        </div>
       </section>
 
       <div className="ticker" aria-hidden="true">
@@ -98,19 +99,8 @@ export function Home() {
         </div>
       </div>
 
-      <section className="shell section" aria-label="Snapshot">
-        <div className="stat-grid">
-          {stats.map((stat, index) => (
-            <motion.article className="stat" key={stat.label} initial={reduce ? false : { opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} whileHover={reduce ? undefined : { y: -6 }} viewport={{ once: true }} transition={{ delay: index * 0.08, duration: 0.5, ease }}><CountUp value={stat.value} /><span>{stat.label}</span></motion.article>
-          ))}
-        </div>
-        <ul className="client-row" aria-label="Sample product names">
-          {clients.map((client) => <li key={client}>{client}</li>)}
-        </ul>
-      </section>
-
       <section className="shell section" id="about">
-        <SectionTitle eyebrow="About" title="A mobile lead who still writes the feature." lede="Three years of Flutter, from feature work to technical coordination. The product names below are samples so the page can show a full body of work." />
+        <SectionTitle eyebrow="About" title="A mobile lead who still writes the feature." lede="Three years of Flutter, from feature work to technical coordination, API integration, architecture, and App Store delivery." />
         <div className="about-copy">
           <p>I build cross-platform applications that stay understandable after the first release.</p>
           <p>Day to day that means Clean Architecture, BLoC or GetX, REST and Firebase, and the debugging that keeps a build stable. At Join Venture AI I also help with planning, coordination, and delivery.</p>
@@ -131,7 +121,7 @@ export function Home() {
       </section>
 
       <section className="shell section" id="work">
-        <SectionTitle eyebrow="Sample work" title="Six case studies, invented so the portfolio looks finished." lede="GitHub and live links point at placeholders. Replace each entry in src/data/projects.ts when a real app is ready." />
+        <SectionTitle eyebrow="Selected work" title="Real apps, built for people and published on the App Store." lede="A focused selection of iOS projects and their public App Store listings." />
         <ProjectSlider projects={projects} />
       </section>
 
@@ -140,18 +130,6 @@ export function Home() {
         <div className="expertise-grid">
           {expertise.map((item) => (
             <motion.article className="expert" key={item.title} initial={reduce ? false : { opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} whileHover={reduce ? undefined : { y: -6 }} viewport={{ once: true }} transition={{ duration: 0.4 }}><h3>{item.title}</h3><p>{item.copy}</p></motion.article>
-          ))}
-        </div>
-      </section>
-
-      <section className="shell section">
-        <SectionTitle eyebrow="Sample notes" title="Quotes written for the layout, not from real clients." />
-        <div className="quote-grid">
-          {testimonials.map((item) => (
-            <motion.figure className="quote" key={item.name} initial={reduce ? false : { opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.45 }}>
-              <p>“{item.quote}”</p>
-              <footer><strong>{item.name}</strong><br />{item.role}</footer>
-            </motion.figure>
           ))}
         </div>
       </section>

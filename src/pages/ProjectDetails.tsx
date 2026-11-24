@@ -13,10 +13,10 @@ export function ProjectDetails() {
   return (
     <Container>
       <section className="page-hero">
-        <Link className="back-link" to="/projects"><ArrowLeft size={16} aria-hidden="true" /> All sample work</Link>
+        <Link className="back-link" to="/projects"><ArrowLeft size={16} aria-hidden="true" /> All projects</Link>
         <div className="case">
           <div>
-            <p className="kicker"><span>{project.category}</span> {project.year} · Sample</p>
+            <p className="kicker"><span>{project.category}</span> {project.year}</p>
             <h1>{project.title}</h1>
             <p className="lede">{project.description}</p>
             <div className="metrics">
@@ -25,8 +25,8 @@ export function ProjectDetails() {
               ))}
             </div>
             <div className="hero-actions">
-              <a className="btn btn-primary" href={project.live} target="_blank" rel="noreferrer">Live demo <ArrowUpRight size={16} aria-hidden="true" /></a>
-              <a className="btn btn-ghost" href={project.github} target="_blank" rel="noreferrer">GitHub</a>
+              <a className="btn btn-primary" href={project.live} target="_blank" rel="noreferrer">{project.live.includes('apps.apple.com') ? 'View on App Store' : 'Live demo'} <ArrowUpRight size={16} aria-hidden="true" /></a>
+              {project.github ? <a className="btn btn-ghost" href={project.github} target="_blank" rel="noreferrer">GitHub</a> : null}
             </div>
           </div>
           <aside className="case-hero" style={{ background: project.tone }}>
