@@ -10,11 +10,24 @@ export function MainLayout({ children }: PropsWithChildren) {
   const reduce = useReducedMotion()
 
   useEffect(() => {
-    if (hash) {
-      document.querySelector(hash)?.scrollIntoView()
-      return
+    const previousRestoration = window.history.scrollRestoration
+    window.history.scrollRestoration = 'manual'
+
+    const frame = window.requestAnimationFrame(() => {
+      if (hash) {
+        document.querySelector(hash)?.scrollIntoView({ behavior: 'auto', block: 'start' })
+        return
+      }
+
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+    })
+
+    return () => {
+      window.cancelAnimationFrame(frame)
+      window.history.scrollRestoration = previousRestoration
     }
-    window.scrollTo(0, 0)
   }, [pathname, hash])
 
   return (
