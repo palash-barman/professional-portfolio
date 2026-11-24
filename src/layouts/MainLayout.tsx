@@ -12,21 +12,34 @@ export function MainLayout({ children }: PropsWithChildren) {
   useEffect(() => {
     const previousRestoration = window.history.scrollRestoration
     window.history.scrollRestoration = 'manual'
+    const root = document.documentElement
+    const previousBehavior = root.style.scrollBehavior
+    root.style.scrollBehavior = 'auto'
 
-    const frame = window.requestAnimationFrame(() => {
+    let firstFrame = 0
+    let secondFrame = 0
+
+    const scrollToRoutePosition = () => {
       if (hash) {
         document.querySelector(hash)?.scrollIntoView({ behavior: 'auto', block: 'start' })
         return
       }
 
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
-      document.documentElement.scrollTop = 0
+      root.scrollTop = 0
       document.body.scrollTop = 0
+    }
+
+    firstFrame = window.requestAnimationFrame(() => {
+      scrollToRoutePosition()
+      secondFrame = window.requestAnimationFrame(scrollToRoutePosition)
     })
 
     return () => {
-      window.cancelAnimationFrame(frame)
+      window.cancelAnimationFrame(firstFrame)
+      window.cancelAnimationFrame(secondFrame)
       window.history.scrollRestoration = previousRestoration
+      root.style.scrollBehavior = previousBehavior
     }
   }, [pathname, hash])
 
@@ -35,7 +48,7 @@ export function MainLayout({ children }: PropsWithChildren) {
       <Atmosphere />
       <a className="skip-link" href="#content">Skip to content</a>
       <Navbar />
-      <AnimatePresence initial={false} mode="sync">
+      <AnimatePresence initial={false} mode="wait">
         <motion.main
           id="content"
           className="site-main"

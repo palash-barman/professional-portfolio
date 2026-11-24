@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import type { Project } from '../data/projects'
 
@@ -24,16 +24,16 @@ export function ProjectSlider({ projects }: { projects: Project[] }) {
   const [paused, setPaused] = useState(false)
   const project = projects[index]
 
-  function step(dir: number) {
+  const step = useCallback((dir: number) => {
     setDirection(dir)
     setIndex((current) => (current + dir + projects.length) % projects.length)
-  }
+  }, [projects.length])
 
   useEffect(() => {
     if (reduce || paused) return
     const timer = window.setInterval(() => step(1), AUTO_MS)
     return () => window.clearInterval(timer)
-  }, [reduce, paused, index, projects.length])
+  }, [reduce, paused, step])
 
   return (
     <div className="slider" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>

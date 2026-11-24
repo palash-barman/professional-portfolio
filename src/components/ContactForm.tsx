@@ -37,7 +37,7 @@ export function ContactForm() {
     return (
       <div className="form-success" role="status">
         <h3>Note ready.</h3>
-        <p>This demo form does not store messages. Open your mail app to send it to {profile.email}.</p>
+        <p>Your message is ready to send. Open your mail app to contact {profile.email}.</p>
         <a className="btn btn-primary" href={href}>Open email</a>
       </div>
     )
